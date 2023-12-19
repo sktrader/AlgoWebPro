@@ -94,3 +94,44 @@ Optional<Double> salary=list.stream().map(e->e.getSalary()).sorted(Comparator.re
 System.out.print(salary.get());
 
 https://www.youtube.com/watch?v=lm_79dSdq6k
+
+Exception Handling In Spring Boot
+Exception Handling In Rest APIs
+Spring Boot Custom Exception Handling
+
+APIs must have exceptions handled properly for giving proper response back to client
+@ControllerAdvice
+@ExceptionHandler
+
+#custom bean validator
+
+#Exception Handling
+-create package => com.algowebpro.exceptions
+-create custom exception class => ResourceNotFoundException
+
+
+import lombok.Builder;
+@Builder
+public class ResourceNotFoundException extends RuntimeException{
+	//default constructor
+	public ResourceNotFoundException(){
+		super("Resource Not Found !!");
+	}
+	//parameterised constructor
+	public ResourceNotFoundException(String message){
+		super(message);
+	}
+}
+
+# how to Handle Exception => GlobalExceptionHandler
+
+@RestControllerAdvice
+public class GlobalExceptionHandler{
+
+	//handler resource not found exception
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<ApiResponseMessage> resourceNotFoundExceptionHandler(ResourceNotFoundException ex){
+		ApiResponseMessage response=ApiResponseMessage.builder().message(ex.getMessage()).success(true).status(HttpStatus.NOT_FOUND).build();
+		return new ResponseEntity(response,HttpStatus.NOT_FOUND);
+	}
+}

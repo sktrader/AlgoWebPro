@@ -1,0 +1,84 @@
+sudo apt update
+sudo apt install mysql-server mysql-client
+mysql --version
+sudo mysql
+exit
+
+sudo apt update
+sudo apt install git
+git --version
+git config --list
+git config --global user.name "sktrader"
+git config --global user.email "kswapnil55@gmail.com"
+
+ls -a
+git init
+git status
+
+gedit .gitignore
+.classpath
+.project
+.settings/
+bin/
+
+git add .
+git status
+git commit -m "first commit.."
+
+ls -al
+gedit .gitconfig
+
+
+CTRL + ALT + t
+history
+exit
+----------------------------------------------------------------------------------------------
+sudo apt update
+
+// install java 8
+java -version
+javac -version
+sudo apt install openjdk-8-jre-headless
+sudo apt install openjdk-8-jdk-headless
+
+whereis jvm
+cd /usr/lib/jvm
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+echo $JAVA_HOME
+
+export path=$PATH:$JAVA_HOME/bin
+echo $path
+
+// install vs code
+download file => https://code.visualstudio.com/docs/?dv=linux64_deb
+mv code_1.81.0-1690980880_amd64.deb /home/adminz/Desktop/softwares
+sudo apt install ./code_1.81.0-1690980880_amd64.deb
+code .
+
+// finvasia setup
+sudo apt install python3-pip
+pip install NorenRestApiPy-0.0.22-py2.py3-none-any.whl
+pip install pyotp
+pip install pandas
+pip install websocket-client
+
+----------------------------------------------------------------------------------------------
+//Copying and Moving Files
+
+cp file1.txt file2.txt
+cp -r java /home/swapnilk/Deskotp/java-copy
+
+----------------------------------------------------------------------------------------------
+// mysql installation
+sudo apt update
+sudo apt install mysql-server
+mysql --version
+systemctl status mysql.service
+sudo mysql
+	mysql> \s
+
+	alter user 'root'@'localhost' identified with mysql_native_password by "root";
+	exit
+mysql -u root -p
+sudo su
+mysql_secure_installation
