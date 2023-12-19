@@ -1,0 +1,218 @@
+**Spring Security **
+
+What is Spring Security, and why is it important?
+
+Answer: Spring Security is a powerful and highly customizable authentication and access control framework for building secure Java-based applications. It is essential for safeguarding applications by handling authentication (user login) and authorization (user access control) in a flexible and robust manner.
+
+Explain the core components of Spring Security.
+
+Answer: The core components of Spring Security include:
+
+Authentication: It deals with the process of verifying user identities.
+Authorization: It controls access to resources based on the authenticated user's permissions.
+Filters: These are used for various security-related tasks, such as authentication and authorization.
+Providers: These handle authentication requests using different mechanisms (e.g., username/password, OAuth, LDAP).
+UserDetailsService: It loads user-specific data during authentication.
+Security Context: It stores the details of the currently authenticated user.
+How do you configure Spring Security in a Spring Boot application?
+
+Answer: Spring Security can be configured in a Spring Boot application by adding the necessary dependencies (usually spring-boot-starter-security) and creating a security configuration class that extends SecurityConfigurerAdapter. You can then use annotations like @EnableWebSecurity and @Configuration to customize security settings.
+
+Explain the difference between Authentication and Authorization in Spring Security.
+
+Answer: Authentication is the process of verifying the identity of a user, typically through username/password, tokens, or other credentials. Authorization, on the other hand, determines what actions or resources a user is allowed to access after they have been authenticated. In Spring Security, authentication is often handled by authentication providers, while authorization is managed through access control rules.
+
+What is the purpose of the UserDetailsService interface in Spring Security?
+
+Answer: The UserDetailsService interface is used to load user-specific data during the authentication process. It provides a way to retrieve user details, such as username, password, and authorities, from a data source (e.g., a database) and is a crucial component for customizing user authentication.
+
+Explain the concept of roles and authorities in Spring Security.
+
+Answer: Roles and authorities are used to define user permissions in Spring Security. Authorities are the lowest level of permission and represent individual security actions or tasks (e.g., "READ", "WRITE"). Roles, on the other hand, group multiple authorities together and are assigned to users. Users can have one or more roles, and each role can have one or more authorities.
+
+What is CSRF protection, and how does Spring Security provide it?
+
+Answer: Cross-Site Request Forgery (CSRF) is an attack that tricks a user into executing unintended actions on a web application. Spring Security provides CSRF protection by including a CSRF token in forms, and it validates this token on form submission. This prevents attackers from performing actions on behalf of authenticated users without their consent.
+
+Explain the differences between Basic Authentication and Form-based Authentication in Spring Security.
+
+Answer:
+
+Basic Authentication: It involves sending the username and password in an HTTP header, typically in Base64-encoded form. It is stateless and is commonly used with REST APIs.
+Form-based Authentication: It presents users with a login form to enter their credentials. It is commonly used for web applications and is stateful as it relies on cookies or session management.
+What is the purpose of Spring Security's method-level security?
+
+Answer: Spring Security's method-level security allows you to secure individual methods or functions within your application by specifying which roles or authorities are allowed to invoke them. This fine-grained access control helps protect critical parts of your application.
+
+How can you implement custom authentication and authorization logic in Spring Security?
+
+Answer: You can implement custom authentication and authorization logic in Spring Security by creating custom implementations of interfaces such as UserDetailsService, AuthenticationProvider, and AccessDecisionVoter. Additionally, you can use annotations like @PreAuthorize and @PostAuthorize for method-level security.
+
+These questions cover some of the fundamental aspects of Spring Security that you may encounter in an interview. Be prepared to go into more detail and provide practical examples based on your experience and knowledge.
+
+
+** Project Questions **
+
+-what exception u faced , how u handled them ?
+-is there any payment gateway integrated with project
+-What kind of authorization has been done your project tell me in brief
+-what is last project work you have done
+-have you work on configuration level of project
+-How do you deploy your project?
+-Which application server are you using?
+-Which web server you are using?
+
+-why do you want to switch job
+-how many employees are in your company
+
+-Which java version you are using ?
+-Which Domain you have worked in?
+
+-is project developed from scratch(start)
+
+-tell Project Desciption
+-which technology used in project
+-what is your project flow
+-what is project and describe
+
+-which annotation u used in project
+-which are different annotations used in your project
+
+-As backend developer what kind of work you did ?
+-Can you tell me about your current project and its end to end flow
+-What are the technology you have used from front end to back end
+
+
+-What is bitbucket? What is difference between bitbucket and GitHUB?
+-Tell me how you work on BitBucket
+-Tell me how many commands you have used?
+
+ 
+-Did you write any kind of Junit?
+-Junit has to be written by developer not by tester, tester will run it? Why didn’t you write any Junit ?
+
+-in project -where u use encapsulation, Abstraction.
+
+-how to debug code in eclipse
+
+-Aware of Linux or uniux syntax? Shell scripting ?
+
+
+
+33)How u provide security to ur project
+34)Which database used  in project and why
+35)how to confugure logger in your project?write a code on notepad?
+36)which mapping is used in your project?perform on notepad?
+37)which module have u design in project?explain
+38)which dependencies use in your project?explain each?
+39)project flow?what is ur roles and responsibility?
+
+
+53)	How u use spring boot in u r project
+54)	Which annotation used
+
+
+42)	explain project
+43)	which technologies u have used
+44)	what is u r role
+45)	what exactly u have work
+46)	how u have write code in project
+47)	which annotation u have used
+48)	how u provide security 
+49)	write any code from project which u have written
+50)	how u use restful api we u r project
+
+
+2)Explain  your Project architechture.
+3) U R project domain is Insurance, then you have to Add new tab “Covid Insurance” then what will u do     in backend of ur project.
+
+25.How to write URL to connect endpoints in your project.
+25. Which Spring Framework you have implemented in your project.
+
+27. what are your roles and responsibilities?
+28. Have you work on frontend part?
+29. where you are updating your issues in JIRA.
+30. On which domain your project is there?
+
+Properties used in project?
+Security and trasaction management in project?
+1) tell me about urself
+2) which project you work
+3) flow of project/ working/ Architecture 
+4)how to configure logger into project
+
+21) how to shift code from one environment to another environment?
+8. Which anotation use in our project?
+3. Which oops concept are use in our prject?
+
+
+1.tell me about your self?
+2.which project you work?
+3.flow of Project?
+4.Which Technology you use?
+
+1 what is your project
+Flow, archetecture.
+2 your roles and responsibility
+3 project description
+4 how you shift code from one environment to another environment(related to deployement)
+8 which annotation used in project
+
+11 design pattern use in project
+24. Have u used any custom Query in project..write it down
+24. Explain the project flow....
+1-Tell me about yourself
+2-Project details and description
+3-Roles and responsibilities in project
+4-Technologies used in project
+5-How many team members are working in project
+
+6-In core java,advance java design restfull web services and logic in this parameter rate yourself put of 10
+
+7-Database used in project 
+
+1. Tell me about Yourself and And your Company Last project.
+2. What technology you have used? 
+
+1. Please tell me about yourself?
+2. So this your project was on springboot from start or you have moved to springboot?
+3. Which server you are using ?
+4. so how do you deploy your project?
+5. Tell about your project in detail?
+6. so what did you use for api testing?
+7. Do you know designpatterns?
+8. Which design pattern have you used in your project? explain scenario?
+17. What front end techs your company uses?
+18. How does you get work in your company?
+
+
+
+
+
+     *
+    * *
+   * * *
+  * * * *
+ * * * * *
+--------------------------------------------------------------------------------------------------------------------------------
+How to reverse String in Java {String str = "my name is khan";}
+1) By StringBuilder / StringBuffer {by reverse()}
+2) By Reverse Iteration {charAt() toCharArray() split()}
+--------------------------------------------------------------------------------------------------------------------------------
+What happens behind the code int data=50/0;?
+Exception Handling with Method Overriding in Java
+
+
+
+***Serialization***
+
+//what do you understand by serialzation and purpose of that ,have you used in anywhere
+
+Serialization is a mechanism of converting the state of an object into a byte stream.
+Deserialization is the reverse process where the byte stream is used to recreate the actual 
+Java object in memory.
+
+Why we need Serialization in java?
+• To transfer objects through a network.
+• To keep Java objects in memory.
+• To save Java objects in files.
