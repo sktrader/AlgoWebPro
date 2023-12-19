@@ -13,18 +13,19 @@
                 -allows Spring to detect our custom beans automatically.
                 -Spring has provided a few specialized stereotype annotations: @Controller, @Service and @Repository.
                 They all provide the same function as @Component.
-                
-                
+                <br>
                 
                 @ Primary
                 -There's another annotation called @Primary that we can use to decide which bean to inject when ambiguity is present regarding dependency injection.
                 -This annotation defines a preference when multiple beans of the same type are present.
                 -The bean associated with the @Primary annotation will be used unless otherwise indicated.
                 -This annotation is useful when we want to specify which bean of a certain type should be injected by default.
+
+                <br>
                 
                 @ Autowired
                 
-                
+                <br>
                 @ Qualifier
                 
                 -By using the @Qualifier annotation, we can eliminate the issue of which bean needs to be injected.[@Qualifier("xyz")]
@@ -32,6 +33,7 @@
                 -if both the @Qualifier and @Primary annotations are present, then the @Qualifier annotation will have precedence. Basically, @Primary defines a default, while @Qualifier is very specific.
                 -The @Qualifier annotation along with @Autowired can be used to remove the confusion by specifiying which exact bean will be wired.
                 
+                <br>
                 
                 
                 @ Entity
