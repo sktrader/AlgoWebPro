@@ -1,0 +1,570 @@
+E commerce project- 20% weightage-
+
+Requirement---- Login, Add Product,Edit Product, Delete Product, getProduct
+
+User story----- Task--- Divide--- Scrum Master
+
+Client--> BA(Business Analyst)--> Project Manager/Scrum Master--->Team Lead-->
+Software engineer or software developer or java developer-
+
+JIRA- it is tool which is used for managing the project task-
+      Project management tool-
+
+task or user story or issue ----->
+
+total no of issues in your one sprint- 5,6,7,8,9,10,11,12,13,14,15
+
+what is your sprint duration in your company-2 week-
+start date 6 June and End date 17 June
+
+when are you planning for next sprint.
+
+current sprint -- second week thrusday or friday-
+
+sprint planning- project manager, scrum master, TL, developer, tester, DBA
+
+scrum master- story point--> 2,3,5,8,13,21---- no of days.
+
+2-  buffer time 4 days-
+
+priority- low, medium high- srcum master will set the priority
+
+status -
+
+open-----scrum master is assign user story to you
+in progress--- starts actual work--- in progress(developer/scrum master)
+clsoed--- developement  + testing   ---- closed(developer/scrum master)
+reopen- user story in case of any issue occured in future
+
+Every user story have many acceptance criteria-
+
+AC01--- details description about the task-
+AC02
+AC03
+
+suppose one user story has been assigned to you then how you decide
+what are the things/task you need to perform into it?
+
+
+user story-- complete- Result-- Request and reponse--
+word document -postman -request and response ?
+
+Every user story have multiple sub task-
+
+who will create sub task in your company - scrum master
+
+suppose- you have assigned one user story in that you have one query so
+how will you communicate to your manager--
+
+JIRA- Comments- section
+
+1st approach
+@Ram-- your questions ?   --- Save or submit---- Manager- Mail-Trigger-
+@Sachin--- answer.
+@Ram your question?
+@Sachin---- answer
+
+2nd approach- scrum meeting, daily stand up meeting - will raise hand or
+ask the questions
+
+3rd approach- Microsoft team- communication purpose--Video-
+manager-sent-message
+
+4th approach
+BA-sent-message
+
+how to update regarding your daily status in your company- 
+
+1st approach- daily send mail to manager--- Microsoft outlook
+2nd approach- daily stand up meeting
+3rd approach- update the % on JIRA
+
+Requirement analysis- 20%
+actual coding- 50%
+75%
+100% -- testing + developement
+
+what is your project architecture
+
+Basic architecture
+when user sent request--> UI--->API Layer--->Service Layer--DAO layer---Database
+interviewer not satisfied-
+
+when user sent request--> UI--->API Layer--->Service Layer-
+Middleware service--->(Logging, Transection, Security)
+-DAO layer---Database.
+
+java version 1.8
+
+Domain knowledge-
+
+Ecommerce- 
+
+it is online shopping portal in which where buyer meet seller
+
+it is electronic medium where user can purchase the products
+
+Buyer- to buy or purchase the product
+
+Seller- to sell the products
+
+Product- all the information about the product
+
+inventory- total number of stock-
+
+Refund- refund request details ---product id, product name, user, amount, status 
+
+cart- No of products we can add into cart-- product name and its quantity
+
+order- Add to Cart-- Payment-----Order Summary
+
+Delivery-- Order--->Delivery details- Iniated- 3-4 or 5-6 
+
+processed- tracking system-
+
+Mumbai location
+at pune location- 11.30 am - Nigadi
+Devliery out for
+
+Transection- refernce number id date, time etc.
+
+cancellation - product cancellation request
+
+Search- multiple products
+
+Recommendation- xyz product- site-  100 user purchase-- 
+
+laptop- purchase- accessories- display the list
+
+wishlist-- site-- like product-- add to wishlist-- next time login--
+-------------------------------------------------------------------
+functional knowledge- whatever we have mentioned in functional knowledge
+that is project number of module-
+
+user/buyer- name, email, phone, address etc.
+seller-- seller information- all the product info about seller
+Admin-  view user details, view order, view stock, view refund details,
+        view cancellation order, etc.
+
+product- product id, name, quantity, decsiption etc.
+
+Account- account name, previosuly ordered, 
+
+Transection- id, date,time, reference number, 
+
+Delivery- order-- delivery---2-3 days-- 
+
+Report- 
+number of user-
+number of user who purchase product
+number of use who cancelled product
+order list for number of user.
+refund details
+
+cancellation- cancel product details id,name, quantity, description, reason
+
+bank details-- Refund request--->Bank details--7-8 businees days or 
+else ask the bank details
+
+Transfer-- e commerce-----transfer money(id,date,time, amount)----user
+
+Receipt processing- your invoice--(order summary id, quantity, name, price)
+
+Refund amount ---> after order cancellation- how much payment we need to refund.
+
+User-- view product, purchase the product,cancel product
+admin-- add product
+
+offer & Discount-- %, Product name, discount validity, coupen code-
+
+Login module- username, passsword and remaining details of user.
+
+Seller--add product- admin approval- quantity- laptop -20-- verify-
+
+Payment gateway---TL  (Credit card, debit card, net banking, upi id, paytm)
+Deployment--------
+
+Trace order--
+Agent-  
+
+Amazon-----------------------Pune/mumbai---Agent-----Delivery boy----User
+
+complaints- about the product that is rating- 1 to 5
+
+feeback- 4 to 5- 
+
+Comparision-- Laptop--- DELL   HP    which one is the best
+---------------------------------------------------------
+Spring Boot Configuration- how to create the project-
+
+open STS
+Go to File
+then NEW 
+Spring starter project
+enter the group id and artifact id
+click on finish button
+
+com.wipro.bankofamerica.estore.controller  -----> API Layer
+
+com.wipro.bankofamerica.estore.service  --------> Service layer
+com.wipro.bankofamerica.estore.serviceImpl------>
+
+com.wipro.bankofamerica.estore.repository ----> Repository layer or DAO layer.
+
+mysql- open---- database layer
+
+brief idea about packages-
+
+com.wipro.bankofamerica.estore.model---  POJO class- getter and setter toString
+
+com.wipro.bankofamerica.estore.service-- interface define
+
+void,int ,string- rarely used
+
+return object to method-- widely used
+
+total how many classes and interfaces in your project-
+
+n no of classes and interface
+multiple classes and interface
+
+com.wipro.bankofamerica.estore.serviceImpl-- interface implementation
+@Service- this current class is work as service
+
+inject the repo object  by using autowired annotation-
+
+@Repository
+public interface ProductRepository
+
+this interface will act as repository layer---
+
+//how to inject service into rest controller in your project
+@Autowired
+private ProductService productService;
+
+@RequestBody- it is used to pass the data through postman body.
+
+@PathVariable("id") ---- method argument as value which bind to that url
+
+RestController-->Service-->ServiceImpl--->Repository--database-
+---------------------------------------------------------------
+How to starts for writing Rest API into Industry-
+
+Design the Rest API for Save operation
+Product class
+Design interface productservice
+Design interface implementation
+Repository layer- interface
+Rest controller-
+
+Database- create table---no need to create-
+
+//application.properites --- database connection code
+what is the next step-
+how you connect spring boot application with database- application.properties file.
+server.port=8083 ---- how to change port number in spring boot application.
+-----------------------------------------------------
+how to run spring boot project-
+open main method file-->
+Run as --->Spring boot app
+
+Test API by using postman-
+open the postman
+enter the url as --->http://localhost:8083/product/getAll
+click on send button
+
+-----------------------------------------------------
+how to debug the code in the project
+step-1
+open the restcontroller and respective API
+left hand side, double click on that
+productServiceImpl- line no. 36- return repo.save(product); /
+open the project in debug mode- run as debug spring boot app
+
+open postman
+enter the url and click on send button
+user request---(postman)--->Restcontroller---> service--->serviceimpl-->
+press fn+8
+back to control - rest controller--
+
+-------------------------------------------------------------
+Factory design pattern-
+
+Design the interface-
+AccessoriesService
+
+design concrete classes- Camera, mobile and laptop
+
+Accessories- men and women
+payment gateway- credit card, debit card, netbanking or upi
+
+---------------------------------------------------------
+Bit Bucket- Push and Pull code----- with eclipse or without git-- videos
+
+Push the code to git-
+Local Machie-->git command prompt--
+git status-- press enter then display the list of files
+login.java
+product.java
+productserviceimpl.java
+
+git add login.java
+git add product.java
+
+git commit -m"added one field product into product pojo class"
+press enter -----
+
+changes save to local reposiotry--(your machine)
+
+git push and press enter button then
+changes will be reflected to central or remote repository
+
+to take data from remote to local
+git pull
+
+and press enter
+
+localreposiotory.
+
+how to resolve conflicts in your project or how to resolve git conflicts
+
+Ram
+
+product.java--------line no 40---make change-- commit- server
+
+shyam
+
+product.java -------line no 40 ---make change----commit error- conflict-
+
+how to resolve
+he will take back up- save into other text file.
+latest code- git----
+add the line into line no 41
+
+git + github
+git + bitbucket
+
+---------------------------------------------------------
+
+Different server in company
+
+-what are the differnt server used in your company.
+Dev/test server
+UAT
+Production
+Dev Server-   developer check their functionality
+TL- deploy the code--
+URL-
+application username
+application password
+sent mail---outlook
+
+Test Server--  tester/ QA
+TL- deploy the code--
+URL-
+application username
+application password
+sent mail---outlook
+
+if bug occured then how tester communicate with you?
+JIRA-- create issue-----steps to reproduce issue--submit--->Mail notification trigger
+outlook--link-- check
+
+UAT Server--- sign off- QA and BA-- green signal
+Production Server--- Live or final server
+TL- deploy the code--
+URL-
+application username
+application password
+sent mail---outlook
+
+----------------------------------------
+How to handle transection management-
+
+problem statement- save user with multiple product into database
+
+User------ save----db
+Product----save(At time run time error)-- db(not saved data into db)-
+in this case, what is the use of user details-
+
+how you handle transection management in your project-
+
+step-1
+main method---
+@EnableTransactionManagement   ----to activate the transection
+
+step-2 
+@Transectional annotation service implementation
+
+User--Save
+Product- Save
+
+--------------------------------------------------------
+How to configure the logger into Project
+    it is used to keep / store all the information about application.
+
+why we use logger--?
+if code is deployed on production server---->after that-->
+bug or error occured--then how we decide in which file the error is
+
+Console--->  
+
+steps-1
+application.properties--
+logging.level.root=WARN
+logging.level.org.springframework.web=DEBUG
+logging.level.org.hibernate=ERROR
+logging.pattern.file= "%d{yyyy-MM-dd } [%thread] %-5level %logger{36} - %msg%n"
+logging.file.name=E:/Industrial Training/Jeevan_E-Commerce/application.log
+
+step-2
+open rest controller
+write logger line and call the logger.info() method into rest api and pass the messsge
+into double quote.
+
+------------------------------------
+How to design custom exception in java
+create class
+extends runtimeexceptino
+design parameterized constructor
+
+throws EStoreException("");
+
+--------------------------------------------------
+How to write the Custom Query in live project
+
+have you written any sql query in your project-
+yes- repository layer.
+
+getUserByCity-- Rest controller--->Service--serviceimpl-->DAO--database-
+
+How to perform manual testing in project  - Junit-- tool
+with the help of postman we perform the manual testing in our project.
+
+----------------------------------------------------
+E-Store Release Notes-  TL or Manager--sent mail-- attached this document
+
+Known issue list--
+
+2month 3month 4month-
+Release- whatever the functionality we have completed that needs to delivered to
+the client
+
+what are the different document which is used by your company?
+
+Is your project live-- Production-- yes ----
+Give me URL- As per company policy, we cant share confidential things with you.
+
+deployment - do you know what are the steps follow for deployment
+
+live project  -- http://www.estore.com/--
+http://192.168.15.30/estore/-----
+
+E-Store Manual-- login, product screen
+
+E-Store Restful Service- Dev Guide or developer guide or rest API document
+
+xyz company--- spring boot + rest api  -------Request and response ?
+
+Daily status to TL or Manager
+1st approach
+Daily stand up meeting
+2nd approach
+send mail to manager --- Microsoft outlook
+
+To  - ramesh@wipro.com
+cc  - 
+BCC - suresh@wipro.com
+Subject- Daily status
+
+Hi Ramesh,
+  Please find the below status for your reference
+
+1. Build the Restful api for user with multiple product.
+2. Added the size field on product desciption page
+3. Added the size field into database
+
+Thanks & Regards,
+Amit Patil
++91 8868 9685 50
+
+Roles and responsibilities-
+
+Technical flow-----Backend java part-- restcontroller----service--dao-layer-db
+
+Functional flow---- UI Login--->
+
+Hibernate mapping- one to one
+
+Starting UI Flow-
+
+First run spring boot project--- then UI run
+
+Add Product operation-
+
+How to consume rest api in your project
+addproduct.component.html----->addproduct.ts file---> Angular Service(product.service.
+ts.file(API calling)-----rest.api.ts file---->Java Backend(Rest controller)-->
+Service--DAO layer---Database.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
