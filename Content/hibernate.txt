@@ -1,0 +1,105 @@
+Hibernate
+
+-In Hibernate mapping Which one is best suitable for many type - set or list? 
+-what is one to many and many to many mapping ?
+-write a step of hibernate configuration 
+-what is hibernat dialect?
+-Explain hibernate architecture?
+-what is hibernate does?
+-what is hibernate annotation expalin each
+-what is flow of hibernate to create and application?
+-diff types of mapping in hibernate
+-why hibernate
+
+
+---------------------------------------------------
+Examples of popular Hibernate Dialects for different database systems include:
+
+org.hibernate.dialect.MySQLDialect for MySQL.
+org.hibernate.dialect.OracleDialect for Oracle.
+org.hibernate.dialect.SQLServerDialect for Microsoft SQL Server.
+org.hibernate.dialect.PostgreSQLDialect for PostgreSQL.
+
+Hibernate provides a set of annotations that you can use to map Java classes to database tables and define the relationships between them. Here, I'll explain some of the commonly used Hibernate annotations and their purposes:
+@Entity
+@Table
+@Id
+@GeneratedValue
+@Column
+@OneToMany and ManyToOne
+@ManyToMany
+@JoinColumn
+
+--------------------------------------------------------------------------------------------------------------
+
+
+-What is hibernate?
+Hibernate is an open-source and lightweight ORM tool that is used to store, manipulate, and retrieve data from the database.
+
+-Define persistent classes.
+Classes whose objects are stored in a database table are called as persistent classes.
+
+-Is SessionFactory a thread-safe object?
+Yes, SessionFactory is a thread-safe object, many threads cannot access it simultaneously.
+
+-Is Session a thread-safe object?
+No, Session is not a thread-safe object, many threads can access it simultaneously. In other words, you can share it between threads.
+
+-What are the states of the object in hibernate?
+There are 3 states of the object (instance) in hibernate.
+1.	Transient: The object is in a transient state if it is just created but has no primary key (identifier) and not associated with a session.
+2.	Persistent: The object is in a persistent state if a session is open, and you just saved the instance in the database or retrieved the instance from the database.
+3.	Detached: The object is in a detached state if a session is closed. After detached state, the object comes to persistent state if you call lock() or update() method.
+
+-How to make an immutable class in hibernate?
+If you mark a class as mutable="false", the class will be treated as an immutable class. By default, it is mutable="true".
+
+-How many types of association mapping are possible in hibernate?
+There can be 4 types of association mapping in hibernate.
+1.	One to One
+2.	One to Many
+3.	Many to One
+4.	Many to Many
+
+-What is hibernate dialect
+a dialect in Hibernate is a class that specifies the type of database used in Hibernate so that Hibernate can generate appropriate type of SQL statements.
+Hibernate provides a set of dialects for different databases, and the dialects can be used to generate optimized SQL queries
+
+Mention two components of Hibernate configuration object.
+Database Connection
+Class Mapping Setup
+
+-what is hibernate annotation explain each
+@Entity
+Use to mark any class as entity
+@Table
+Use to change the table details
+@Id
+Use to mark Column as id(primary key)
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+Hibernate will automatically generate values for that using internal sequence. therefore we don’t have to set it manually.
+@Column
+Can be used to specify column mappings. For example , to change the column name in the associated table in database.
+@Transient 
+this tells hibernate not to save this field.
+@Temporal
+Over Date field tells hibernate the format in which the date needs to saved
+@Lob
+Tells hibernate that this is large object ,not a simple object
+
+Why we need maven
+-no need to add jar files manually 
+-we can directly add the dependency
+
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>4.2.21.Final</version>
+</dependency>
+
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.28</version>
+</dependency>
+
