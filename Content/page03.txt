@@ -1,3 +1,263 @@
+
+
+
+
+
+Hibernate bean validation
+
+-Add Dependency=> spring-boot-starter-validation
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+-Use of Annotations => to perform bean property validation
+
+@NotBlank
+@Size 
+@Min
+@Max
+@Email 
+@Pattern Custom validator
+
+-enable the validation @Valid Annotation
+
+
+In Project Where we are using =>
+	UserController => createUser
+
+
+import javax.validation.constraints.Size;
+import javax.validation.constraints.Email;
+UserDto{
+
+@Size(min=3,max=20,message="Invalid Name!!")
+private STring name;
+
+//@Email(message="Invalid User Email !!")
+@Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",message = "Invalid User Email !!")
+@NotBlank(message = "email is required !!")
+private String email;
+
+@NotBlank(message="Password is required !!")
+private String password;
+
+} 
+
+-----------------------------------------------------------------------------------------
+
+Exception Will Occur if we passed Wrong data =>
+Status 400 BadRequest
+MethodArgumentNotValidException
+
+-----------------------------------------------------------------------------------------
+
+
+
+
+
+
+https://www.youtube.com/watch?v=YyfSZPjmTM4
+https://www.youtube.com/watch?v=Ss_URV4n6RY
+https://www.sourcecodeexamples.net/
+https://github.com/selva1055/zebulllatest
+
+
+
+
+REST (Representational state transfer)
+REST is an architectural style.
+REST permits different data format such as Plain text, HTML, XML, JSON etc.
+
+
+SOAP (Simple Object access protocol)
+SOAP is a protocol.
+SOAP permits XML data format only.
+
+
+* Find the Length Of Last Word in a String
+	input-welctome to algowebpro
+	output-length of last word is : 10
+	
+//https://www.youtube.com/watch?v=okPecNk797Y
+* Find highest salary of an employee from each department using java8
+	new Emp("raju","dev",60000,100);
+	new Emp("ram","qa",5000,101);
+	new Emp("ranga","qa",4000,102);
+	new Emp("ramesh","dev",4000,103);
+	new Emp("swapnil","op",8000,104);
+	
+ClassNotFoundException-An exception that occurs when you try to load class at runtime using class.forname() or load class method and mention class is not found in the class path is called ClassNotFoundException
+NoClassDefFoundError	
+
+
+
+ 
+
+commands used in git--
+
+git init :- intitializes a new git repository int current directory
+git clone <url> :- copies a remote repositories to your local machine
+
+git add <filename or .>
+git status
+
+
+
+
+
+sudo apt update
+sudo apt install mysql-server mysql-client
+mysql --version
+sudo mysql
+exit
+
+sudo apt update
+sudo apt install git
+git --version
+git config --list
+git config --global user.name "sktrader"
+git config --global user.email "kswapnil55@gmail.com"
+
+ls -a
+git init
+git status
+
+gedit .gitignore
+.classpath
+.project
+.settings/
+bin/
+
+git add .
+git status
+git commit -m "first commit.."
+
+ls -al
+gedit .gitconfig
+
+
+CTRL + ALT + t
+history
+exit
+----------------------------------------------------------------------------------------------
+sudo apt update
+
+// install java 8
+java -version
+javac -version
+sudo apt install openjdk-8-jre-headless
+sudo apt install openjdk-8-jdk-headless
+
+whereis jvm
+cd /usr/lib/jvm
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+echo $JAVA_HOME
+
+export path=$PATH:$JAVA_HOME/bin
+echo $path
+
+// install vs code
+download file => https://code.visualstudio.com/docs/?dv=linux64_deb
+mv code_1.81.0-1690980880_amd64.deb /home/adminz/Desktop/softwares
+sudo apt install ./code_1.81.0-1690980880_amd64.deb
+code .
+
+// finvasia setup
+sudo apt install python3-pip
+pip install NorenRestApiPy-0.0.22-py2.py3-none-any.whl
+pip install pyotp
+pip install pandas
+pip install websocket-client
+
+----------------------------------------------------------------------------------------------
+//Copying and Moving Files
+
+cp file1.txt file2.txt
+cp -r java /home/swapnilk/Deskotp/java-copy
+
+----------------------------------------------------------------------------------------------
+// mysql installation
+sudo apt update
+sudo apt install mysql-server
+mysql --version
+systemctl status mysql.service
+sudo mysql
+	mysql> \s
+
+	alter user 'root'@'localhost' identified with mysql_native_password by "root";
+	exit
+mysql -u root -p
+sudo su
+mysql_secure_installation
+
+
+
+
+ 
+
+***Docker***
+what is docker
+what is docker image
+docker container
+
+-what are the tools your using deployment
+-why ci/cd important
+
+
+
+
+
+2-change Order of vowels in the strings(eg-"you are cool boy"-"yuo era cool boy")
+3-Find Missing alfabates in the string. (eg-qwer tyu op asdf gh jl xev nm ‚missing are =ikzb)
+technical interview qsn-
+1-Different Between Hashmap And Concurrent Hashmap?
+2-whats are the enhancements in multithreading in 1.7v of java?
+3-what is lambda expression in java?
+4-What is Deadlock?
+5-what is work of fork/join class in java?
+6-What is "wITH* clause in SQL?
+7-Spring IOC container?
+8-Bean scopes?
+9-what are the interfaces spring impliments?
+10-difference between path & URL?
+11-Design Pattern catagories 7
+12-what is Factory & singleton Design Pattern& in which catagory they fallunder?
+13-How to create Factory object in hibernate?
+
+Given two sorted arrays or lists of integers, write a function to combine these two into a single sorted array or list. We need only merge and should not sort. Input: [1, 2, 3, 4, 5, 7, 8] and [1, 2, 8, 22, 33, 44, 55] Output: [1, 2, 3, 4, 5, 7, 8, 22, 33, 44, 55]
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------
+Programms
+
+//https://www.youtube.com/watch?v=J16k1Kv2TdU&t=271s
+* Find Nth Highest Salary Using Java 8 Stream API
+=>
+- class Employee{ int id,String name, double salary}
+- provide getter setter method 
+- add toString method
+- add parameterized constructors
+
+List<Employee> list = new ArrayList<>();
+list.add(new Employee(1,"Swapnil",5000));
+list.add(new Employee(2,"Vaibhav",10000));
+list.add(new Employee(3,"Bhushan",15000));
+list.add(new Employee(4,"Pramod",20000));
+
+Optional<Double> salary=list.stream().map(e->e.getSalary()).sorted(Comparator.reverseOrder()).skipr(2).findFirst();
+System.out.print(salary.get());
+
+https://www.youtube.com/watch?v=lm_79dSdq6k
+
+
+
 **Spring Security **
 
 What is Spring Security, and why is it important?

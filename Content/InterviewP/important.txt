@@ -1,0 +1,52 @@
+https://www.geeksforgeeks.org/top-50-array-coding-problems-for-interviews/  // Solve till level 2
+
+
+You need to know following interviews questions I think its mandatory for interviews:
+
+1.  How HashMap internally works?
+2.  Difference between HashMap & Concurrent HashMap?
+3.  Singleton Class (Theory & Practically)
+4.  Java Logic based programs (atleast you know 50 programs) - This is very very important
+5.  Java 8 features
+6.  You must practice atleast 20 programs on stream api using user defined class object (This is very very important)
+7.  Whats is Lambda & Function interface
+8.  SOLID design principles
+9.  Which design pattern use in your project
+10. Project description, roles & responsiblity
+11.  Difference between Comparable & Comparator
+12.  Which collections used in your project explain?
+13.  Has a relation & Is a relation
+14.  Garbage collector
+15.  Why String immutable
+16.  Multithreading
+17.  Custom exception handling
+18.  Difference Abstraction class & interface
+19.  What is polymorphism
+20.  Set collection
+21.  MVC Architecture
+22.  Which Annotations you used in your project explain it?
+23.  @Qualifier & @Primary
+23.  REST API
+24.  How HTTP works internally?
+25.  Custom queries
+26.  Transaction Management
+27.  Explain Spring Data JPA
+28.  Global Exceptions handling
+29.  Microservices Architecture design pattern
+30.  How Microservices communicate with each other?
+31.  Apache Kafka
+32.  Joins
+33.  SQL Queries
+
+Be confident in front of interviewer if you don't know try to explain positively but don't give up any coding problems.
+
+
+https://ishween1999.medium.com/dynamic-web-project-missing-in-eclipse-ide-42d72c350f21
+
+https://www.youtube.com/watch?v=izMuHGwXyjQ   //link for MySQL root password
+
+https://sqlbolt.com/
+
+
+
+

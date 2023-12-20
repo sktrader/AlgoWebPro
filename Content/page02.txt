@@ -1,0 +1,21 @@
+
+
+
+-what are servlets=>yeah i havent worked on it but the basic knowledge i have
+-What is difference between GenericServlet and HttpServlet?
+The GenericServlet is protocol independent whereas HttpServlet is HTTP protocol specific. HttpServlet provides additional functionalities such as state management etc.
+
+
+-in java what is the use of callable interface
+
+-what is real use of polymorphism,practical example from project
+
+-volatile keyword ,tarnsiant keyword
+-consumer interface
+-variable arguments ...
+
+-exceptions in overiridng
+
+ enum=>constants when we define roles admin user roles,it has a class like structure but we can use to declare our own constants 
+
+-suppose i have a list. and i want to reverse it using stream api.

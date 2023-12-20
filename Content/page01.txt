@@ -1,9 +1,26 @@
+-what is way to import only static membars of class
+
+-how garbage collector work internally in java
+-purpose of gc method
+
+-diff bet normal service and microservices
+-microservices can share common database=> yes ,so it is a good idea to share database or not 
+- what can be orechestartion in term of microservices=> it is something like central system control various microservices to complete task
+-how you implementing disaster recovery in your project ,suppose something happen and your microservice are stopped working so what you have as a backup plan or have not then tell me your startegy by your knowledge
+-response entity, what is benefit of using response entity
+
+-concurrent hashmap ? internal works
+
+
+-----------------------------------------------------------------------------------------
+
+
+Annotations : 
+
 @ Component
 -allows Spring to detect our custom beans automatically.
--Spring has provided a few specialized stereotype annotations: @Controller, @Service and @Repository.
-They all provide the same function as @Component.
-
-
+-Spring has provided a few specialized stereotype annotations:@Controller, @Service and @Repository.
+-They all provide the same function as @Component.
 
 @ Primary
 -There's another annotation called @Primary that we can use to decide which bean to inject when ambiguity is present regarding dependency injection.
@@ -13,14 +30,11 @@ They all provide the same function as @Component.
 
 @ Autowired
 
-
 @ Qualifier
-
 -By using the @Qualifier annotation, we can eliminate the issue of which bean needs to be injected.[@Qualifier("xyz")]
 -We need to take into consideration that the qualifier name to be used is the one declared in the @Component annotation.[@Component("xyz")]
 -if both the @Qualifier and @Primary annotations are present, then the @Qualifier annotation will have precedence. Basically, @Primary defines a default, while @Qualifier is very specific.
 -The @Qualifier annotation along with @Autowired can be used to remove the confusion by specifiying which exact bean will be wired.
-
 
 
 @ Entity
@@ -35,6 +49,10 @@ They all provide the same function as @Component.
 -It is a class-level annotation. The repository is a DAOs (Data Access Object) that access the database directly.
 The repository does all the operations related to the database.
 
+
+
+@ResponseBody annotation in Spring is used to indicate that the return value of a method should be serialized and sent back as the response body of an HTTP response.
+
 @ RestController
 @ RequestMapping("/emp")
 @ RequestBody
@@ -44,95 +62,96 @@ The repository does all the operations related to the database.
 @ PathVariable
 @ RequestParam
 
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
 
-#--------------------
-Hibernate bean validation
-
--Add Dependency=> spring-boot-starter-validation
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-validation</artifactId>
-		</dependency>
-
--Use of Annotations => to perform bean property validation
-
-@NotBlank
-@Size 
-@Min
-@Max
-@Email 
-@Pattern Custom validator
-
--enable the validation @Valid Annotation
+SpringBoot
 
 
-In Project Where we are using =>
-	UserController => createUser
+Exception Handling In Spring Boot
+Exception Handling In Rest APIs
+Spring Boot Custom Exception Handling
+
+APIs must have exceptions handled properly for giving proper response back to client
+@ControllerAdvice
+@ExceptionHandler
+
+#custom bean validator
+
+#Exception Handling
+-create package => com.algowebpro.exceptions
+-create custom exception class => ResourceNotFoundException
 
 
-import javax.validation.constraints.Size;
-import javax.validation.constraints.Email;
-UserDto{
+import lombok.Builder;
+@Builder
+public class ResourceNotFoundException extends RuntimeException{
+	//default constructor
+	public ResourceNotFoundException(){
+		super("Resource Not Found !!");
+	}
+	//parameterised constructor
+	public ResourceNotFoundException(String message){
+		super(message);
+	}
+}
 
-@Size(min=3,max=20,message="Invalid Name!!")
-private STring name;
+# how to Handle Exception => GlobalExceptionHandler
 
-//@Email(message="Invalid User Email !!")
-@Pattern(regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",message = "Invalid User Email !!")
-@NotBlank(message = "email is required !!")
-private String email;
+@RestControllerAdvice
+public class GlobalExceptionHandler{
 
-@NotBlank(message="Password is required !!")
-private String password;
+	//handler resource not found exception
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<ApiResponseMessage> resourceNotFoundExceptionHandler(ResourceNotFoundException ex){
+		ApiResponseMessage response=ApiResponseMessage.builder().message(ex.getMessage()).success(true).status(HttpStatus.NOT_FOUND).build();
+		return new ResponseEntity(response,HttpStatus.NOT_FOUND);
+	}
+}
 
-} 
+**spring boot **
+-devtools => whenever we are making changes to code we have to run the server manually.so after adding devtool dependancy change we have make automatically build but catch is here that pom.xml wont be reflected only file changes reflected  
+-tomcat to jetty
+-property file value @value
+-@configuration ,suppose we do not want to include any of the  configuration  on some condition how we can do that
 
-Exception Will Occur if we passed Wrong data =>
-Status 400 BadRequest
-MethodArgumentNotValidException
+-default scope of spring bean => singleton 
+-what are the types of autowirng
+-what you will preffer setter, constructor based
 
-*Custom 
-
-
-https://www.youtube.com/watch?v=YyfSZPjmTM4
-https://www.youtube.com/watch?v=Ss_URV4n6RY
-https://www.sourcecodeexamples.net/
-https://github.com/selva1055/zebulllatest
-
-Discord=> sk9137587676@gmail.com Qazx@12345
-
-
-REST (Representational state transfer)
-REST is an architectural style.
-REST permits different data format such as Plain text, HTML, XML, JSON etc.
-
-
-SOAP (Simple Object access protocol)
-SOAP is a protocol.
-SOAP permits XML data format only.
+-life cyce of spring bean
 
 
-* Find the Length Of Last Word in a String
-	input-welctome to algowebpro
-	output-length of last word is : 10
-	
-//https://www.youtube.com/watch?v=okPecNk797Y
-* Find highest salary of an employee from each department using java8
-	new Emp("raju","dev",60000,100);
-	new Emp("ram","qa",5000,101);
-	new Emp("ranga","qa",4000,102);
-	new Emp("ramesh","dev",4000,103);
-	new Emp("swapnil","op",8000,104);
-	
-ClassNotFoundException-An exception that occurs when you try to load class at runtime using class.forname() or load class method and mention class is not found in the class path is called ClassNotFoundException
-NoClassDefFoundError	
+--------------------------------------------------------------------------------------------------------------------------------
+Hibernate
+---------------------------------------------------------------------------------------
+MySQL
+
+-write a SQL Query to find fifth highest salary
+	SELECT DISTINCT * FROM employee ORDER BY salary desc LIMIT 4,1;
+
+-do you know about unions what is Union
 
 
+-What is a Stored Procedure?
+	A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again.
+	//Stored Procedure Syntax
+	CREATE PROCEDURE procedure_name
+	AS
+	sql_statement
+	GO;
+	//Execute a Stored Procedure
+	EXEC procedure_name;
+-----------------------------------------------------------------------------------------
+Java8
+-----------------------------------------------------------------------------------------
+
+Linux
 
 
+-----------------------------------------------------------------------------------------
 
-** Spring Security
+Spring Security
 
 Authentication | Authorization
 User Managment
@@ -144,101 +163,3 @@ Session managment
 
 CSRF -- cross site request forgery protection
 CORS --cross origin rsource sharing
- 
-
-commands used in git--
-
-git init :- intitializes a new git repository int current directory
-git clone <url> :- copies a remote repositories to your local machine
-
-git add <filename or .>
-git status
-
-
-
-
-
-sudo apt update
-sudo apt install mysql-server mysql-client
-mysql --version
-sudo mysql
-exit
-
-sudo apt update
-sudo apt install git
-git --version
-git config --list
-git config --global user.name "sktrader"
-git config --global user.email "kswapnil55@gmail.com"
-
-ls -a
-git init
-git status
-
-gedit .gitignore
-.classpath
-.project
-.settings/
-bin/
-
-git add .
-git status
-git commit -m "first commit.."
-
-ls -al
-gedit .gitconfig
-
-
-CTRL + ALT + t
-history
-exit
-----------------------------------------------------------------------------------------------
-sudo apt update
-
-// install java 8
-java -version
-javac -version
-sudo apt install openjdk-8-jre-headless
-sudo apt install openjdk-8-jdk-headless
-
-whereis jvm
-cd /usr/lib/jvm
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
-echo $JAVA_HOME
-
-export path=$PATH:$JAVA_HOME/bin
-echo $path
-
-// install vs code
-download file => https://code.visualstudio.com/docs/?dv=linux64_deb
-mv code_1.81.0-1690980880_amd64.deb /home/adminz/Desktop/softwares
-sudo apt install ./code_1.81.0-1690980880_amd64.deb
-code .
-
-// finvasia setup
-sudo apt install python3-pip
-pip install NorenRestApiPy-0.0.22-py2.py3-none-any.whl
-pip install pyotp
-pip install pandas
-pip install websocket-client
-
-----------------------------------------------------------------------------------------------
-//Copying and Moving Files
-
-cp file1.txt file2.txt
-cp -r java /home/swapnilk/Deskotp/java-copy
-
-----------------------------------------------------------------------------------------------
-// mysql installation
-sudo apt update
-sudo apt install mysql-server
-mysql --version
-systemctl status mysql.service
-sudo mysql
-	mysql> \s
-
-	alter user 'root'@'localhost' identified with mysql_native_password by "root";
-	exit
-mysql -u root -p
-sudo su
-mysql_secure_installation
