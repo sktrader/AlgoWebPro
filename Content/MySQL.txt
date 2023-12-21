@@ -1,0 +1,36 @@
+
+
+MySQL
+
+-The default port for MySQL Server is 3306
+	DDL(Data Defination Language)
+	DML (Data Manipulation Language)
+	DCL(Data Control Language)
+
+
+-What is a join in MySQL ? 
+	
+	-joins are used to query data from two or more tables. 
+	-Inner Join
+	-Left Join
+	-Right Join
+	-Full Outer Join
+
+-What is the difference between CHAR and VARCHAR ? 
+	-When table is created , CHAR is used to define the fixed length of the table and columns.
+	-the length value could be in the range of 1-255.
+	-The VARCHAR command is used to adjust the column and table lengths as required.
+
+
+-How to add Columns in existing table MySQL ?
+	ALTER TABLE <table-name> ADD COLUMN <column-name> <column-defination>;
+
+
+-What is the difference between the DELETE TABLE and TRUNCATE TABLE commands in MySQL ?
+-What is the use of ENUM in MySQL ?
+-What is the difference between primary key and unique key ?
+-What is the difference between primary key and foreign key ?
+
+ 
+-create employeeInfo table with id,name,salary.
+-find the third-highest salary from the EmployeeInfo table.

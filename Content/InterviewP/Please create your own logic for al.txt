@@ -1,0 +1,241 @@
+Please create your own logic for all questions where you are expected to write some code.
+
+ 
+How many variables and objects will be created in the following block of code:
+
+String s1 = “Welcome”; // one object will be created in scp
+
+String s2 = new String(“Welcome”); // one object will created in heap memory and one will be created in scp but already it is available so it will give refernce point 
+
+String s3 = “Welcome”; it will refere to scp
+Que 1
+-> s1=one object will be created in scp
+	s2=one object will created in heap memory and one will be created in scp but already it is available so it will give refernce point 
+	s3=it will refere to scp as s1 object 
+
+
+2. What will be the output of the following block of code?
+
+String s1 = "Buggy Bread";
+
+String s2 = "Buggy Bread";
+
+System.out.println((s1 == s2)  ? "1 : Equal" : “1 : Not Equal”);
+
+output ->  1 : Equal
+
+
+String n1 = new String("Buggy Bread");
+
+String n2 = new String("Buggy Bread");
+
+System.out.println((n1 == n2)  ? "2 : Equal" : “2 : Not Equal”);
+
+ 
+output -> 2 : Not Equal
+
+
+
+3.  What will be the output of below program?
+
+ 
+public class Test{
+	public static void main(String args[]) {
+		double[] myList = {1, 5, 5, 5, 5, 1};
+                double max = myList[0];
+		int indexOfMax = 0;
+                for(int i = 1; i<myList.length; i++) {
+                      if(myList[i] > max){
+                           max = myList[i];//5
+                           indexOfMax = i;//5
+                 }
+                }
+             System.out.println(indexOfMax);
+              }
+  }
+
+ output-> 5
+
+4.    Write a program to calculate the Factorial of 5 using Recursion.
+
+ 
+
+5.    Write a program to find the maximum number from the below Integer array.
+
+      {1, 3, 9, 7, 5}
+
+import java.util.*;
+public class MaxNumArray{
+
+	public static void main(String[] args){
+	
+		int arr[]={1, 3, 9, 7, 5};
+		Arrays.sort(arr);
+		int len=arr.length;
+		int max=arr[len-1];
+		System.out.println(max);
+		
+	}
+
+} 
+
+
+
+
+6.   Write a program to count and print the number of vowels in the below String.
+
+      “I live in India” // a e i o u
+
+
+public class CountVowels{
+
+	public static void main(String[] args){
+		String str="I live in India";
+		int countV=0;
+		str=str.toLowerCase();
+		for(int i=0;i<str.length();i++){
+			if(str.charAt(i)=='a' || str.charAt(i)=='e' || str.charAt(i)=='i' || str.charAt(i)=='o' || str.charAt(i)=='u'){
+				countV++;
+			}
+
+		}
+		System.out.print(" Number of vowels = " + countV);
+	}
+
+} 
+
+
+Sample answer (considering the above input string) - “Number of vowels = 7”
+
+ 
+
+7.  Write a program to count and print the number of occurrences of each unique    character in the below String.
+
+    “I live in India”
+
+import java.util.*;
+public class CountOccurances{
+
+	public static void main(String[] args){
+		String str="I live in India";
+		char ch=str.toCharArray();
+		Map<Character> map=new HashMap<>();
+		for(char c:ch){
+			if(!map.contains(c)){
+				map.put(c,1);	
+			}else{
+				int cnt=map.get(c);
+				map.put(c,cnt+1);
+			}
+		}
+		System.out.println(map);
+		
+	}
+
+} 
+
+
+Sample answer (considering the above input string) -
+
+I = 2
+
+l = 1
+
+i = 3
+
+v = 1
+
+e = 1
+
+n = 2
+
+d = 1
+
+a = 1
+
+ 
+
+8.    Write a program to count and print the number of occurrences of each consonant   in the below String.
+
+       “I live in India”
+
+
+
+
+
+Sample answer (considering the above input string) -
+
+l = 1
+
+v = 1
+
+n = 2
+
+d = 1
+
+ 
+
+9.   Write a program to remove character “i” from the below String and print the output.
+
+“I live in India”
+
+import java.util.*;
+public class RemoveChar{
+
+	public static void main(String[] args){
+		String str="I live in India";
+		StringBuilder sb=new StringBuilder(str);
+		for(int i=0;i<str.length();i++){
+			if(str.charAt(i) !='i'){
+				sb.append(str.charAt(i));
+			}
+
+		}
+		System.out.print(sb);
+	}
+
+} 
+
+ 
+
+10.  What will be the output of the following program – 1 1 or 1 2 or 2 1 or 2 2
+
+ 
+
+Class Main {
+
+public static void main() {
+
+int a = 1;
+
+A aObj = new A(1);//1
+
+modify (a, aObj);
+
+system.out.println(a);//1
+
+system.out.println(aObj.getA());//1
+
+}
+
+private void modify(int a, A aObj) {
+
+a = 2; aObj.setA(2);
+
+}
+
+}
+
+Class A {
+
+int a;
+
+public A(int a) { this.a = a; }
+
+public void setA(int a) { this.a = a; }
+
+public int getA() { return this.a; }
+
+}
+
+output -> 1,1
