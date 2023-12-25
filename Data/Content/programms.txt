@@ -1,0 +1,3 @@
+Java Program to Reverse Each Word In Given String.
+String input = "java code";
+Output = avaj edoc

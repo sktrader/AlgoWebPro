@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h3{
+            color: blue;
+        }
+        pre{
+            background-color: rgb(165, 212, 212);
+        }
+    </style>
+</head>
+<body>
+    <h2>Annotations</h2>
+    <div>
+        <br>
+        <h3>@Autowired annotation</h3>
+        <p>The @Autowired annotation is used to inject the bean automatically <br>
+            The @Autowired annotation is used in constructor injection , setter injection and field injection.<br>
+            The @Autowired annotation is used to inject the dependency using constructor injection , setter injection and field injection.
+        </p>
+        <pre>
+            <code>
+
+                Example 1: By Using lombok @AllArgsConstructor annotation 
+
+                @AllArgsConstructor
+                @RestController
+                @RequestMapping("/api/employees")
+                public class EmployeeController {
+
+
+                    //here we used constructor based autowiring with @AllArgsConstr.
+                    private EmployeeService employeeService;
+
+                }   
+
+                Example 2: By Using field injection
+
+                @RestController
+                @RequestMapping("/files")
+                public class FileController {
+
+                    //here we used field injection
+                    @Autowired
+                    private FileService fileService;
+
+                }
+            </code>
+        </pre>
+    </div>
+
+    <div>
+        <br>
+        <h3>@Bean annotation</h3>
+        <p>@Bean annotation indicates that a method produces a bean to be managed by the <strong>Spring container</strong>.
+            <br>
+            The @Bean annotation is usually declared in Configuration class to create Spring Bean definitions.
+        </p>
+        <pre>
+            <code>
+                package com.algowebpro.electronic.store.config;
+
+                @Configuration
+                public class ProjectConfig {
+
+	                @Bean
+	                public ModelMapper mapper() {
+		                return new ModelMapper();
+                    }
+	            }
+            </code>
+        </pre>
+    </div>
+
+    <div>
+        <br>
+        <h3>@Bean annotation</h3>
+        <p>@Bean annotation indicates that a method produces a bean to be managed by the <strong>Spring container</strong>.
+            <br>
+            The @Bean annotation is usually declared in Configuration class to create Spring Bean definitions.
+        </p>
+        <pre>
+            <code>
+                package com.algowebpro.electronic.store.config;
+
+                @Configuration
+                public class ProjectConfig {
+
+	                @Bean
+	                public ModelMapper mapper() {
+		                return new ModelMapper();
+                    }
+	            }
+            </code>
+        </pre>
+    </div>
+</body>
+</html>
