@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Code Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+</head>
+<body>
+
+<h2>Java Code Example</h2>
+
+<pre>
+<code class="language-java">
+package com.becoder.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.becoder.model.Emp;
+import com.becoder.respository.EmpRepository;
+
+@Service
+public class EmpServiceImpl implements EmpService {
+
+    @Autowired
+    private EmpRepository empRepo;
+
+    @Override
+    public Emp createEmp(Emp emp) {
+        return empRepo.save(emp);
+    }
+
+    @Override
+    public List<Emp> getAllEmp() {
+        return empRepo.findAll();
+    }
+
+    @Override
+    public Emp getEmpById(int id) {
+        return empRepo.findById(id).get();
+    }
+
+    @Override
+    public void deleteEmp(int id) {
+        Emp emp = empRepo.findById(id).get();
+        if (emp != null) {
+            empRepo.delete(emp);
+        }
+    }
+
+    @Override
+    public Emp updateEmp(int id, Emp emp) {
+        Emp oldEmp = empRepo.findById(id).get();
+        if (oldEmp != null) {
+            emp.setId(id);
+            return empRepo.save(emp);
+        }
+        return null;
+    }
+
+}
+</code>
+</pre>
+
+</body>
+</html>

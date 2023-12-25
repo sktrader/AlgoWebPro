@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Java</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h2>What is the difference between Iterator and ListIterator in java.</h2>
+        </div>
+        <div>
+            <h2>Can We Start Thread Twice ?</h2>
+            <p>No. You can not start thread twice <br>
+            This will result in a IllegalThreadStateException</p>
+            <pre><code>
+                public class StartTwice{
+                    public static void main(String[] args){
+                        Thread t = new Thread();
+                        t.start();
+                        t.start();
+                    }
+
+                }
+            </code></pre>
+        </div>
+        <div>
+            <h2>What methods thread use to communicate with each other ?</h2>
+            <p>Thread use wait(), notify(), and notifyAll() to communicate with each other.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Framework</title>
+</head>
+<body>
+    <div>
+        <div>
+            <h2>How to make read only ArrayList in java.</h2>
+            <p>Use Collections.unmodifiableList() method.</p>
+            <pre>
+                <code>
+                public class ReadOnlyArrayList{
+
+                    public static void main(String[] args){
+                        List<String> list = new ArrayList<>();
+
+                            list.add("Apple");
+                            list.add("Banana");
+                            list.add("Mango");
+
+                        List<String> readOnlyList = Collections.unmodifiableList(list);
+
+                        readOnlyList.add("Kiwi");//UnsupportedOperationException
+
+
+                    }
+
+                }
+                </code>
+            </pre>
+        </div>
+    </div>
+</body>
+</html>
