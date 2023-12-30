@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL</title>
+</head>
+<body>
+    <div>
+
+        <div>
+            <pre>
+                Check the MySQL version:
+                    SELECT VERSION()
+            </pre>
+        </div>
+        <div>
+            <pre>
+                mysql -u root -p
+                show databases;
+                create database databaseName;
+                show tables;
+                desc tableName;
+                drop database nameOFDatabase;
+
+                delimiter //
+                delimiter ;
+
+            </pre>
+        </div>
+
+        <div>
+            <pre>
+                Stored Procedure
+
+                create database procedureEx;
+                use procedureEx;
+
+                delimiter //
+                create procedure CreateUserTable()
+                begin
+                create table if not exists user(
+                    user_id int auto_increment primary key,
+                    first_name varchar(255),
+                    last_name varchar(255),
+                    city varchar(255)
+                );
+                insert into user(first_name,last_name,city) values('swapnil','kamble','Mumbai');
+                insert into user(first_name,last_name,city) values('bhushan','Sonawane','NaviMumbai');
+                select * from user;
+                end //
+
+                delimiter ;
+
+                call CreateUserTable()
+            </pre>
+        </div>
+        
+    </div>
+</body>
+</html>
