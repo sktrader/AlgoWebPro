@@ -8,6 +8,69 @@
 <body>
     <div>
         <div>
+            <h2>What is public static void main(String[] args) ?</h2>
+            <p>
+                public - this method is accessible from outside the class.<br>
+                static - No object is required to call the main method.<br>
+                void - this method does not return any value.<br>
+                main - Special method name to start the java program execution.<br>
+                String[] args - the arguments passed while running the program.
+            </p>
+
+            <h2>Can we change the order of public , static , and void keywords ?</h2>
+            <p>
+                Yes can change the order of public and static keywords , but void should come just before the method name.
+            </p>
+        </div>
+
+        <div>
+            <h2>Method Overloading</h2>
+            <pre>
+                public class Calculator{
+
+                    // By changing the number of parameters
+                    
+                    public int add(int a, int b){
+                        return a+b;
+                    }
+
+                    public int add(int a , int b , int c){
+                        return a+b+c;
+                    }
+
+                    // By changing the data types of parameters
+
+                    public double add(double a,double b){
+                        return a+b;
+                    }
+
+                }
+
+                public class CalculatorTest{
+
+                    public static void main(String[] args){
+
+                        Calculator calculator = new Calculator();
+
+                        int result1 = calculator.add(10,20);
+
+                        System.out.println("Addition of Two numbers : " + result);
+
+                        int result2 = calculator.add(10,20,30);
+
+                        System.out.println("Addition of Three numbers : "+ result2);
+
+                        double result3 = calculator.add(10.0,20.0);
+
+                        System.out.println("Addition of Two Double Numbers : "+ result3);
+
+                    }
+
+                }
+
+            </pre>
+        </div>
+        <div>
             <h2>Abstract Class And Interface</h2>
             <pre>
                 Abstraction-
