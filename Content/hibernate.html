@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIBERNATE</title>
+</head>
+<body>
+    <div>
+        <h2>Basics Commonly used Hibernate Annotations</h2>
+        <h3>@Entity -used to mark class as Entity.</h3>
+        <h3>@Table - used to change table details.</h3>
+        <h3>@Id - use to mark column as id (primary key)</h3>
+        <h3>@GeneratedValue - hibernate automatically generate values for that using an internal sequence. Therefore we dont have to set it manually.</h3>
+        <h3>@Column - used to specify column mappings.to change the column name in the associated table in database.</h3>
+        <h3>@OneToOne</h3>
+        <h3>@OneToMany</h3>
+        <h3>@JoinColumn</h3>
+        <h3>@Transient - this tells hibernate not to save this field in database</h3>
+        <pre>
+
+            @Entity
+            @Table(name = "products")
+            public class Product{
+
+                @Id
+                private String productId;
+
+                @Column(name ="title")
+                private String title;
+                
+                @Column(length = 1000)
+                private String description;
+                
+                private double price;
+                
+                @Transient
+                private double discount;
+                
+                private boolean live;
+            }
+
+        </pre>
+    </div>
+    
+</body>
+</html>
