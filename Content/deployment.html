@@ -94,6 +94,21 @@
                 https://www.youtube.com/watch?v=rtG8S5WsSHg
             </pre>
         </div>
+
+        <div>
+            <h2> Change Time UCT to IST in AWS</h2>
+            <pre>
+                sudo apt update
+                date
+                timedatectl
+                timedatectl list-timezones
+                timedatectl list-timezones | grep Asia
+                sudo su
+                timedatectl set-timezone "Asia/Kolkata"
+                date
+                timedatectl
+            </pre>
+        </div>
     </div>
 </body>
 </html>
