@@ -92,6 +92,13 @@
                 Interface (100%)
             </pre>
         </div>
+        <div>
+            <h2>what will happen if we write final keyword with abstarct class?</h2>
+            <p>If you declare a class abstract, to use it, you must extend it and if you declare a class final you cannot extend it,<br>
+                since both contradict with each other you cannot declare a class both abstract and final <br>
+                if you do so a compile time error will be generated.
+            </p>
+        </div>
 
         <div>
             <h2>Can We Start Thread Twice ?</h2>
@@ -125,6 +132,22 @@
             When a new string object is created using the string literals ,then JVM first checks in the pool if this string already exists or not.<br>
             if it exists ,then it will reference the existing string rather than creating a new object.<br>
             this will help in the speeding up of the application and also helps in saving the memory as no two objects will have the same content.</p>
+        </div>
+
+        <div>
+            <h2>Why abstract class has constructor even though we cannot create object?</h2>
+            <p>
+                We cannot create an object of abstract class but we can create an object of subclass of abstract class.<br>
+                When we create an object of subclass of an abstract class, it calls the constructor of subclass.<br>
+                This subclass constructor has super in the first line that calls constructor of an abstract class.<br>
+                Thus, the constructors of an abstract class are used from constructor of its subclass.<br>
+                If the abstract class doesn’t have a constructor, a class that extends that abstract class will not get compiled.
+            </p>
+        </div>
+
+        <div>
+            <h2></h2>
+            <p></p>
         </div>
     </div>
 </body>
