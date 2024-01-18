@@ -9,18 +9,78 @@
 </head>
 <body>
     <div>
-        <h2>Java Code Example</h2>
+        <h2>Write a java program to remove all white spaces from given String</h2>
+        <h3>Input : ja va st a r <br>
+            Output : javastar</h3>
         <pre>
             <code class="language-java">
+                class RemoveWhiteSpaces {
 
-                public class Test{
-                    pubic static void main(){
-                        System.out.println("Hello World!!")
+                    public static void main(String[] args) {
+                        String input = "ja va st a r";
+                        
+                        input=input.replaceAll(" ","");
+                        
+                        System.out.println(input);
                     }
                 }
-
             </code>
         </pre>
+    </div>
+    <div>
+        <h2>Write a java program to swap 2 variables values without using 3rd variable.</h2>
+        <h3>Input  : x = 10 y = 20 <br>
+            Output : x = 20 y = 10</h3>
+        <pre>
+            <code class="language-java">
+                class SwapValues {
+    
+                    public static void main(String[] args) {
+                        int x = 10;
+                        int y = 20;
+                        
+                        x = x+y;
+                        y = x-y;
+                        x = x-y;
+                        
+                        System.out.println("after Swapping : x : "+ x + " y :"+y);
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+
+    <div>
+        <h2>Write a program to reverse a string without using StreamAPI.</h2>
+        <h2>Write a program to find the second largest number in the integer array</h2>
+        <h2></h2>
+        <p>
+            -Write a java program to remove all special characters from given String
+Input: $ja!va$&st%ar
+Output : javastar
+
+        </p>
+        <h2></h2>
+        <p>
+            -Write a java program to remove all white spaces from given String
+Input:  ja va st a r 
+Output : javastar
+        </p>
+        <h2></h2>
+        <p>
+            
+-Write a Java Program to reverse a String
+Input : hello
+Output : olleh
+
+	4 ways to reverse a String
+﻿﻿	Using toCharArray ( ) method
+﻿﻿	Using chartAt(int index) method
+﻿﻿	Using java.lang.String Buffer class provided reverse() method
+﻿﻿	Using java.lang.StringBuilder class provided reverse ( ) method
+        </p>
+        <h2></h2>
+        <h2></h2>
     </div>
 </body>
 </html>
