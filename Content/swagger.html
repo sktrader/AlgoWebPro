@@ -7,25 +7,25 @@
 </head>
 <body>
     <div>
-        <h2> add Dependancy</h2>
         <pre>
-            * we need to add following 2 dependencies for swagger in pom.xml
-            <code>
-                    <dependency>
-                        <groupId>io.springfox</groupId>
-                        <artifactId>springfox-swagger2</artifactId>
-                        <version>2.9.2</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>io.springfox</groupId>
-                        <artifactId>springfox-swagger-ui</artifactId>
-                        <version>2.9.2</version>
-                    </dependency>
-            </code>
+            swagger implementation:
+            -add springfox-boot-starter dependancy to pom.xml:
+  
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version> <!-- Use the latest version available -->
+		</dependency>
+		
+        - create class in config package : SwaggerConfig
+        -create bean Docket(DocumentationType.SWAGGER_2)
+        -add swagger property to application.properties 
+	        #swagger
+	        spring.mvc.pathmatch.matching-strategy = ANT_PATH_MATCHER
+	
+        -add @EnableSwagger2 annotation in SpringbootApplication main class
 
-            * Integrating Swagger-2 Into the Project
-            -create package as "config"
-            -create class in config package as "SwaggerConfig"
+        -http://localhost:8080/swagger-ui/ (check port number)
         </pre>
     </div>
 </body>
