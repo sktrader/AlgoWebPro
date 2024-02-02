@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA 8</title>
+    <link rel="stylesheet" href="./prism/prism.css">
+</head>
+<body>
+    <h1>JAVA 8</h1>
+    <div>
+        <h2>Find Nth Highest salary using Java 8 Stream API</h2>
+        <pre>
+            <code class="language-java">
+                public class EmployeeTest {
+        
+                    public static void main(String[] args) {
+                        List<Employee> employees = new ArrayList<Employee>();
+                        
+                        employees.add(new Employee(100, "Swapnil k", 100000));
+                        employees.add(new Employee(200, "MS Dhoni", 90000));
+                        employees.add(new Employee(300, "Virat k", 80000));
+                        employees.add(new Employee(400, "Sachin T", 90000));
+                        employees.add(new Employee(500, "Rohit S", 70000));
+                        employees.add(new Employee(600, "Chris G", 1100000));
+                        
+                        employees.forEach(System.out::println);	
+                        
+                        //List<Long> sortedList
+                        
+                        Optional<Long> salary= employees.stream().map(e->e.getSalary()).sorted(Comparator.reverseOrder()).skip(2).findFirst();//.collect(Collectors.toList());
+                        
+                        //sortedList.forEach(System.out::println);
+                        System.out.println(salary.get());
+                    
+                    }
+                }
+            </code>
+        </pre>
+    </div>
+    <script src="./prism/prism.js"></script>
+</body>
+</html>
