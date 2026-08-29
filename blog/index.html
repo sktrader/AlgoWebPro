@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog & Tutorials — AlgoWebPro</title>
+<meta name="description" content="Step-by-step tutorials on Spring Boot, microservices, Docker, and stock market strategy from AlgoWebPro.">
+<link rel="icon" type="image/png" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="blog.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="../index.html" class="brand">
+      <img src="../assets/logo.png" alt="AlgoWebPro" class="brand-mark">
+      <span>AlgoWebPro</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../index.html#series">Series</a>
+      <a href="../index.html#strategy">Strategy</a>
+      <a href="index.html" class="active-link">Blog</a>
+      <a href="../index.html#join">Join</a>
+    </nav>
+    <a href="https://www.youtube.com/@AlgoWebPro?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Subscribe</a>
+  </div>
+</header>
+
+<main>
+  <section class="blog-hero">
+    <div class="wrap">
+      <p class="eyebrow">Written tutorials</p>
+      <h1>Blog &amp; build logs</h1>
+      <p class="blog-hero-sub">Every setup step, config file, and gotcha from the videos — written down so you can copy-paste instead of pausing and rewinding.</p>
+    </div>
+  </section>
+
+  <section class="blog-list-section">
+    <div class="wrap">
+      <div class="filter-bar" role="tablist" aria-label="Filter posts by category">
+        <button class="filter-btn active" data-filter="all">All posts</button>
+        <button class="filter-btn" data-filter="devops">DevOps &amp; Backend</button>
+        <button class="filter-btn" data-filter="markets">Markets</button>
+      </div>
+
+      <div id="post-list" class="post-list">
+        <p class="loading-state">Loading posts&hellip;</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img src="../assets/logo.png" alt="AlgoWebPro" class="brand-mark">
+      <div>
+        <p class="footer-name">AlgoWebPro</p>
+        <p class="footer-tag">Algorithmic trading &middot; Web development</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.youtube.com/@AlgoWebPro" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://instagram.com/algowebpro" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="footer-disclaimer">Content is for educational purposes only and is not financial advice. Past backtest performance does not guarantee future results.</p>
+    <p class="footer-copyright">&copy; <span id="year"></span> AlgoWebPro</p>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+<script src="blog.js"></script>
+</body>
+</html>

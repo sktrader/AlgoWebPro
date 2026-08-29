@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "installing-docker",
+    "title": "Installing Docker: a clean setup on Windows, Mac, and Linux",
+    "excerpt": "Get Docker running correctly the first time, plus the sanity checks to run before starting any container tutorial.",
+    "category": "devops",
+    "categoryLabel": "DevOps & Backend",
+    "date": "2026-08-29",
+    "readTime": "6 min read"
+  },
+  {
+    "slug": "setting-up-mysql-with-docker",
+    "title": "Setting up MySQL with Docker",
+    "excerpt": "Run MySQL in a container with a persistent volume, connect to it from a client, and avoid the two mistakes that lose your data.",
+    "category": "devops",
+    "categoryLabel": "DevOps & Backend",
+    "date": "2026-09-05",
+    "readTime": "7 min read"
+  }
+]

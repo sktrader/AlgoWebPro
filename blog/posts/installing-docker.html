@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Installing Docker: a clean setup on Windows, Mac, and Linux — AlgoWebPro</title>
+<meta name="description" content="Get Docker running correctly on Windows, Mac, or Linux, with the verification steps to run before starting any container tutorial.">
+<link rel="icon" type="image/png" href="../../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../blog.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="../../index.html" class="brand">
+      <img src="../../assets/logo.png" alt="AlgoWebPro" class="brand-mark">
+      <span>AlgoWebPro</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../../index.html#series">Series</a>
+      <a href="../../index.html#strategy">Strategy</a>
+      <a href="../index.html" class="active-link">Blog</a>
+      <a href="../../index.html#join">Join</a>
+    </nav>
+    <a href="https://www.youtube.com/@AlgoWebPro?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Subscribe</a>
+  </div>
+</header>
+
+<main>
+  <section class="article-header">
+    <div class="wrap">
+      <a href="../index.html" class="back-link">&larr; Back to all posts</a>
+      <span class="post-tag tag-devops">DevOps &amp; Backend</span>
+      <h1>Installing Docker: a clean setup on Windows, Mac, and Linux</h1>
+      <div class="article-meta">
+        <span>Aug 29, 2026</span>
+        <span>&middot;</span>
+        <span>6 min read</span>
+      </div>
+    </div>
+  </section>
+
+  <article class="article-body wrap">
+    <p>Every Docker tutorial assumes Docker is already installed and working. It rarely just works on the first try, so this post is the setup step everyone skips — done properly, once, so every tutorial after this one starts from a clean state.</p>
+
+    <h2>What you're actually installing</h2>
+    <p>On Windows and Mac, you install <strong>Docker Desktop</strong> — a GUI app that runs a lightweight Linux VM in the background and gives you the <code>docker</code> command in your terminal. On Linux, you install <strong>Docker Engine</strong> directly — no VM needed, since Docker is Linux-native.</p>
+
+    <h2>Windows setup</h2>
+    <p>Docker Desktop on Windows needs WSL2 (Windows Subsystem for Linux) as its backend. Most modern Windows 10/11 installs already have it, but if this is a fresh machine, enable it first:</p>
+    <pre><code>wsl --install</code></pre>
+    <p>Restart if prompted. Then download Docker Desktop from <a href="https://www.docker.com/products/docker-desktop/" target="_blank" rel="noopener">docker.com</a>, run the installer, and make sure "Use WSL 2 instead of Hyper-V" is checked during setup. Launch Docker Desktop once after install and wait for the whale icon in your system tray to stop animating — that means the engine is ready.</p>
+
+    <div class="callout"><strong>Common snag:</strong> if the installer complains that virtualization is disabled, you'll need to enable it in your BIOS/UEFI settings (usually called "Intel VT-x" or "AMD-V") and reboot.</div>
+
+    <h2>Mac setup</h2>
+    <p>Download Docker Desktop for Mac from the same <a href="https://www.docker.com/products/docker-desktop/" target="_blank" rel="noopener">docker.com</a> page — pick the Apple Silicon build if you're on an M-series chip, or the Intel build otherwise. Drag it into Applications, launch it, and grant the permissions it asks for. No extra configuration needed.</p>
+
+    <h2>Linux setup (Ubuntu/Debian example)</h2>
+    <p>On Linux you install Docker Engine directly, no desktop app required:</p>
+    <pre><code>sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</code></pre>
+
+    <p>By default, Docker commands need <code>sudo</code> on Linux. To run Docker as your normal user, add yourself to the <code>docker</code> group, then log out and back in:</p>
+    <pre><code>sudo usermod -aG docker $USER</code></pre>
+
+    <h2>Verify the install</h2>
+    <p>Once installed — on any OS — open a terminal and check the version:</p>
+    <pre><code>docker --version
+docker compose version</code></pre>
+    <p>Then run the classic sanity check. This pulls a tiny test image and confirms Docker can actually create and run a container end to end:</p>
+    <pre><code>docker run hello-world</code></pre>
+    <p>If you see a message starting with "Hello from Docker!", the install is good and you're ready for the next tutorial.</p>
+
+    <div class="callout"><strong>Linux permission denied error?</strong> That almost always means the group change from the step above hasn't taken effect yet — fully log out and back in (or reboot), then try again.</div>
+
+    <h2>What's next</h2>
+    <p>With Docker confirmed working, the next post picks up from here: spinning up a MySQL container with a persistent volume so your data survives a restart, and connecting to it from a local client.</p>
+
+    <div class="next-post">
+      <span>Coming up</span>
+      <a href="setting-up-mysql-with-docker.html">Setting up MySQL with Docker &rarr;</a>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img src="../../assets/logo.png" alt="AlgoWebPro" class="brand-mark">
+      <div>
+        <p class="footer-name">AlgoWebPro</p>
+        <p class="footer-tag">Algorithmic trading &middot; Web development</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.youtube.com/@AlgoWebPro" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://instagram.com/algowebpro" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="footer-disclaimer">Content is for educational purposes only and is not financial advice. Past backtest performance does not guarantee future results.</p>
+    <p class="footer-copyright">&copy; <span id="year"></span> AlgoWebPro</p>
+  </div>
+</footer>
+
+<script src="../../script.js"></script>
+</body>
+</html>
