@@ -22,6 +22,8 @@
     <nav class="nav-links">
       <a href="#learn">Learn</a>
       <a href="#series">Series</a>
+      <a href="#strategy">Strategy</a>
+      <a href="blog/index.html">Blog</a>
       <a href="#stack">Stack</a>
       <a href="#join">Join</a>
     </nav>
@@ -116,6 +118,66 @@
           <h3>Code Review Friday</h3>
           <p>Viewer-submitted bots and apps, reviewed line by line: what works, what breaks, and how to fix it.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRATEGY -->
+  <section class="strategy" id="strategy">
+    <div class="wrap">
+      <p class="section-eyebrow">Live strategy log</p>
+      <h2 class="section-title">The weekly Nifty strategy I'm running</h2>
+      <p class="strategy-intro">A hedged short-put structure on Nifty weekly options. Rules only, no live strikes or premiums — those change week to week and aren't posted here.</p>
+
+      <div class="strategy-card">
+        <div class="strategy-legs">
+          <div class="strategy-leg">
+            <p class="leg-tag leg-sell">Leg 1 &middot; Sell</p>
+            <h3>1 lot ATM put</h3>
+            <p>Sell 1 lot of the current week's at-the-money Nifty put. This collects the premium that funds the hedge in leg 2.</p>
+          </div>
+          <div class="strategy-arrow" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </div>
+          <div class="strategy-leg">
+            <p class="leg-tag leg-buy">Leg 2 &middot; Buy</p>
+            <h3>2 lots OTM put, next week</h3>
+            <p>Buy 2 lots of an out-of-the-money put on <em>next</em> week's expiry, choosing a strike where the combined cost is roughly half the premium collected in leg 1.</p>
+          </div>
+        </div>
+
+        <div class="strategy-notes">
+          <div class="strategy-note">
+            <span class="note-label">Net effect</span>
+            <span class="note-value">Opens for a net credit — leg 2 costs about half of what leg 1 collects.</span>
+          </div>
+          <div class="strategy-note">
+            <span class="note-label">Why the hedge is a week out</span>
+            <span class="note-value">The next-week OTM puts stay cheaper per lot, so 2 lots of protection still costs less than the premium collected.</span>
+          </div>
+          <div class="strategy-note">
+            <span class="note-label">Review cadence</span>
+            <span class="note-value">Positions and strikes are reassessed weekly around expiry — this is a running log, not a fixed set-and-forget trade.</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="strategy-disclaimer">This is a personal record of a strategy I trade, shared for educational purposes only. It is not a recommendation to buy or sell any security, and it is not financial advice. Options trading carries substantial risk of loss — size and hedge according to your own risk tolerance, and consult a licensed advisor before trading.</p>
+    </div>
+  </section>
+
+  <!-- BLOG TEASER -->
+  <section class="blog-teaser" id="blog-teaser">
+    <div class="wrap">
+      <div class="blog-teaser-head">
+        <div>
+          <p class="section-eyebrow">Written tutorials</p>
+          <h2 class="section-title">Latest from the blog</h2>
+        </div>
+        <a href="blog/index.html" class="btn btn-secondary blog-teaser-link">View all posts</a>
+      </div>
+      <div id="blog-teaser-list" class="blog-teaser-grid">
+        <p class="loading-state">Loading posts&hellip;</p>
       </div>
     </div>
   </section>
